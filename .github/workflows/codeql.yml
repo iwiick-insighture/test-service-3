@@ -70,5 +70,8 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
+    - name: Workspace
+      run: echo "${{ github.workspace }}"
+
     - name: Print SARIF content
       run: cat /home/runner/work/test-service-3/results/javascript.sarif
