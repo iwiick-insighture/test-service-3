@@ -70,11 +70,5 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
-    # Save CodeQL report as a file
-    - name: Save CodeQL Report
-      run: |
-        echo "${{ steps.codeql-analysis.outputs.stdout }}" > codeql-report.txt
-
-    # Step to cat the CodeQL report file
-    - name: Cat CodeQL Report
-      run: cat codeql-report.txt
+    - name: Print SARIF content
+      run: cat $GITHUB_WORKSPACE/results/javascript.sarif
