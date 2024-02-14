@@ -72,8 +72,9 @@ jobs:
 
     # Save CodeQL report as a file
     - name: Save CodeQL Report
-      run: echo "${{ steps.codeql-analysis.outputs.stdout }}" > codeql-report.txt
+      run: |
+        echo "${{ steps.codeql-analysis.outputs.stdout }}" > codeql-report.txt
 
-  # Step to cat the CodeQL report file
-  - name: Cat CodeQL Report
-    run: cat codeql-report.txt
+    # Step to cat the CodeQL report file
+    - name: Cat CodeQL Report
+      run: cat codeql-report.txt
