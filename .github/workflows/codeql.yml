@@ -71,4 +71,4 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     - name: Print SARIF content
-      run: cat $GITHUB_WORKSPACE/test-service-3/results/javascript.sarif
+      run: cat /home/runner/work/test-service-3/results/javascript.sarif
